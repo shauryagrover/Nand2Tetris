@@ -1,0 +1,15 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/FullAdder.hdl
+
+CHIP FullAdder {
+    IN a, b, c;
+    OUT sum, carry;
+
+    PARTS:
+    HalfAdder(a=a,b=b,sum=ab,carry=ba);
+    HalfAdder(a=c,b=ab,sum=sum,carry=abc);
+    Or(a=abc,b=ba,out=carry);
+
+}
