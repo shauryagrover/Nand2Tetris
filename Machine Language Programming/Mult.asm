@@ -1,0 +1,20 @@
+@R1
+D=M
+@TEMP
+M=D
+@R2
+M=0
+
+(LOOP)
+  @R0
+  D=M
+  @R2
+  M=D+M
+  @TEMP
+  M=M-1
+  D=M
+  @LOOP
+  D;JGT
+ (END)
+   @END
+   0;JMP
